@@ -8,7 +8,6 @@ import {
   NavigationMenuList, 
   navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
-import { User } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -19,24 +18,11 @@ const Header = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/">
+              <Link to="/about">
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Properties
+                  About
                 </NavigationMenuLink>
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link to="/my-applications">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  My Applications
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <div className="flex items-center gap-2 ml-4 text-gray-700">
-                <User size={20} />
-                <span>Account</span>
-              </div>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

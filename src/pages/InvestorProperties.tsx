@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,12 +9,12 @@ const PropertyCard = ({ property }: any) => {
   const navigate = useNavigate();
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg">
+    <Card className="h-full flex flex-col">
       <div className="bg-gray-200 h-[240px]"></div>
-      <div className="p-6 space-y-4">
-        <div className="flex justify-between items-center">
+      <div className="p-6 space-y-4 flex-grow flex flex-col">
+        <div className="flex justify-between items-start">
           <h3 className="text-xl font-semibold">{property.name}</h3>
-          <span className="text-green-600 font-semibold">₹{property.price}/year</span>
+          <span className="text-green-600 font-semibold whitespace-nowrap">₹{property.price}/year</span>
         </div>
         
         <div className="flex items-center gap-1 text-gray-600">
@@ -48,12 +47,12 @@ const PropertyCard = ({ property }: any) => {
           </div>
         </div>
         
-        <div>
+        <div className="flex-grow">
           <p className="text-sm text-gray-500">Available Facilities</p>
           <p className="font-medium text-sm">{property.facilities}</p>
         </div>
         
-        <div className="flex justify-between items-center pt-2 border-t">
+        <div className="grid grid-cols-2 gap-4 pt-2 border-t">
           <div>
             <p className="text-sm text-gray-600">Owner</p>
             <p className="font-medium">{property.owner}</p>
@@ -124,7 +123,7 @@ const InvestorProperties = () => {
       
       <div className="container mx-auto py-8 px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-          <h1 className="text-2xl font-bold text-gray-800">Available Properties for Rent</h1>
+          <h1 className="text-2xl font-bold text-gray-800">Available Properties</h1>
           
           <div className="flex items-center gap-3">
             <div className="relative">
@@ -144,10 +143,6 @@ const InvestorProperties = () => {
             <Button variant="outline" className="flex items-center gap-2">
               <Filter size={16} />
               Filter
-            </Button>
-            
-            <Button variant="outline" className="border-green-500 text-green-500">
-              For Rent
             </Button>
           </div>
         </div>

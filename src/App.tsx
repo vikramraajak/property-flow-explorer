@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InvestorProperties from "./pages/InvestorProperties";
 import PropertyDetails from "./pages/PropertyDetails";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import PropertyDetailsForm from "./pages/application/PropertyDetailsForm";
 import FarmingPlanForm from "./pages/application/FarmingPlanForm";
@@ -24,6 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<InvestorProperties />} />
+          <Route path="/about" element={<About />} />
           <Route path="/property/:id" element={<PropertyDetails />} />
           
           {/* Application Flow Routes */}
